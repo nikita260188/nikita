@@ -12,8 +12,8 @@ public class QALightAboutPage {
     String tel380997801078 = "//a [contains(text(), '(099)') and contains(text(), '010-78')]"; //Ссылка на телефон +380997801078
     String StudentsOffice = "//a [@class ='reg']";
 
-    // Выбрал для проверки перехода в главное меню
-    // и кнопки с выподающим списком и ссылок в нем (для примера сделал только одну кнопку)
+    //  Выбрал для проверки перехода в главное меню
+    //  и кнопки с выподающим списком и ссылок в нем (для примера сделал только одну кнопку)
 
     String headerLogo = "//img [@src = 'https://qalight.com.ua/wp-content/themes/qalight/images/logo_qalight.png']"; //Лого QALight
     String aboutUsInDropDown = "//li [@id ='menu-item-254']/a [contains(text(), 'О нас')]"; // Выпадающий список "О нас"
