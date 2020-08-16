@@ -1,4 +1,4 @@
-package pages;
+package Lesson.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ public class MainPage extends BasePage{
 
     }
 
-    private final By successHead = By.xpath("//h2[@class = 'shelf-title']");
+    private final By successHead = By.xpath("//h2[@class='hide-sm hide-md f5 mb-1 border-top pt-3']");
     private final String successMessage = "Learn Git and GitHub without any code!";
 
     private final By commitButton = By.xpath("//span[@class = 'css-truncate css-truncate-target']");

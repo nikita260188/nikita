@@ -1,10 +1,10 @@
-package tests;
+package Lesson.tests;
 
 import org.junit.Before;
 import org.junit.Test;
-import pages.LoginPage;
+import Lesson.pages.LoginPage;
 
-public class PageObjectLoginTest extends BaseTest{
+public class PageObjectLoginTest extends tests.BaseTest {
 
     private LoginPage loginPage;
 
@@ -15,14 +15,14 @@ public class PageObjectLoginTest extends BaseTest{
 
     @Test
     public void negativeAuthTest(){
-        this.loginPage.login("TestUser", "TestPassword")
+        this.loginPage.login("TestUser","TestPassword")
                 .validateError("Incorrect username or password.");
     }
 
     @Test
     public void positiveAuthTest(){
         this.loginPage.login()
-                .validateSuccess("Learn Git and GitHub without any code!");
+                .validateSuccess("Working with a team?");
     }
 
 

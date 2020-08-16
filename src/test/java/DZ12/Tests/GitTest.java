@@ -1,6 +1,7 @@
-package DZ12;
+package DZ12.Tests;
 
 import DZ12.Pages.LoginPage;
+import DZ12.Tests.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 

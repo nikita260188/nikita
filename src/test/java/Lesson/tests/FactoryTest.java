@@ -1,10 +1,12 @@
-package tests;
+package Lesson.tests;
 
+import Lesson.pages.PageFactory;
 import org.junit.Before;
 import org.junit.Test;
-import Lesson.pages.PageFactory;
+import tests.BaseTest;
 
-public class FactoryTest extends tests.BaseTest {
+
+public class FactoryTest extends BaseTest {
 
     private PageFactory factory;
 

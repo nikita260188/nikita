@@ -1,4 +1,4 @@
-package pages;
+package Lesson.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class PageFactory {
     @FindBy(xpath = "//div[@class = 'container-lg px-2']")
     private WebElement errorMessage;
 
-    @FindBy(xpath = "//h2[@class = 'shelf-title']")
+    @FindBy(xpath = "//h2[@class='hide-sm hide-md f5 mb-1 border-top pt-3']")
     private WebElement successHead;
 
     private WebDriver driver;

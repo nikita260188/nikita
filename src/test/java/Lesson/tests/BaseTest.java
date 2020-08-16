@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
 
-    protected final Logger log = LogManager.getLogger("Test");
+    private final Logger log = LogManager.getLogger("Test");
 
     protected WebDriver driver;
 
@@ -24,7 +24,7 @@ public abstract class BaseTest {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver",
                 System.getProperty("user.dir") +
-                        "/src/main/resources/drivers/chrome/v84/chromedriver");
+                        "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
         switch (System.getProperty("browser", "chrome")){
             case "chrome":
                 this.driver = new ChromeDriver();

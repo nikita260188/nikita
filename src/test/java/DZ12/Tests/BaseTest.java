@@ -1,4 +1,4 @@
-package DZ12;
+package DZ12.Tests;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
