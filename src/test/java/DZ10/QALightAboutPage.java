@@ -1,3 +1,5 @@
+package DZ10;
+
 public class QALightAboutPage {
 
     /**
@@ -11,6 +13,7 @@ public class QALightAboutPage {
     String tel380977801078 = "//a [contains(text(), '+38 (097) 78-010-78')]"; //Ссылка на телефон +380977801078
     String tel380997801078 = "//a [contains(text(), '(099)') and contains(text(), '010-78')]"; //Ссылка на телефон +380997801078
     String StudentsOffice = "//a [@class ='reg']";
+
 
     // Выбрал для проверки перехода в главное меню
     // и кнопки с выподающим списком и ссылок в нем (для примера сделал только одну кнопку)

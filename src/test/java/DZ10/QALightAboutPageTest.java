@@ -1,6 +1,8 @@
+package DZ10;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Before;
+
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,14 +13,14 @@ public class QALightAboutPageTest {
 
     private final Logger LOG = LogManager.getLogger("Web driver test");
 
-    private WebDriver driver = new ChromeDriver();
 
-    @Before
-    public void before (){
-    }
 
     @Test
     public void pageTest(){
+        System.setProperty("webdriver.chrome.driver",
+                System.getProperty("user.dir") +
+                        "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://qalight.com.ua/o-nas/qalight-eto/");
