@@ -5,7 +5,7 @@ import DZ12.Tests.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GitTest extends BaseTest {
+public class GitTest extends BaseTest  {
 
     private LoginPage loginPage;
 
