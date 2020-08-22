@@ -1,4 +1,4 @@
-package DZ12.Tests;
+package DZ.Tests;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,9 +21,6 @@ public abstract class BaseTest {
 
     @Before
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver",
-                System.getProperty("user.dir") +
-                        "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
         switch (System.getProperty("browser", "chrome")){
             case "internet_explorer":
             case "ie":
@@ -37,6 +34,9 @@ public abstract class BaseTest {
                 this.driver = new FirefoxDriver();
                 break;
             case "chrome":
+                System.setProperty("webdriver.chrome.driver",
+                    System.getProperty("user.dir") +
+                            "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
                 this.driver = new ChromeDriver();
                 break;
             case "safari":
