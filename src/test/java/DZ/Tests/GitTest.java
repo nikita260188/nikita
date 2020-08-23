@@ -63,6 +63,20 @@ public class GitTest extends BaseTest  {
     }
 
     /**
+     * Тест с выводом всех версий библиотек в pom.xml
+     */
+
+    @Test
+    public void checkPom(){
+        this.loginPage.login()
+                .openSearchPages()
+                .openCodePage()
+                .openPomFile()
+                .showAllVersion()
+                .signOut();
+    }
+
+    /**
      * Тест с выполнением ДЗ-14
      */
 

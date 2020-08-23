@@ -4,6 +4,9 @@ import Pages.code.CodePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 
 public class SearchPage extends BasePages{
@@ -21,9 +24,14 @@ public class SearchPage extends BasePages{
      */
     public CodePage openCodePage(){
         LOG.info("Выбираем репозиторий G44Automation");
+        List<WebElement> link = driver.findElements (LinkG44Automation);
+        WebElement ourLink = link.stream()
+                        .filter(WebElement::isDisplayed)
+                        .findFirst()
+                        .orElse(driver.findElement(LinkG44Automation));
         Assert.assertTrue("Репозиторий не доступен для нажатия",
-                this.driver.findElements(LinkG44Automation).get(0).isEnabled());
-        driver.findElements(LinkG44Automation).get(0).click();
+                ourLink.isDisplayed());
+        ourLink.click();
         LOG.info("Переходим в репозиторий G44Automation");
         return new CodePage(this.driver);
     }

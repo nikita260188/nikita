@@ -7,6 +7,11 @@ import org.junit.Assert;
 import org.junit.ComparisonFailure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class POMXmlPage extends BasePages {
@@ -20,6 +25,8 @@ public class POMXmlPage extends BasePages {
 
     private final By seleniumID = By.id("LC25");
     private final By seleniumVersion = By.id("LC27");
+    private final By versions = By.xpath("//span[text() = 'version']/..");
+    private final By artifacts = By.xpath("//span[text() = 'artifactId']/..");
 
     /**
      * Метод для проверки версии Selenium
@@ -43,5 +50,36 @@ public class POMXmlPage extends BasePages {
         LOG.info("Версия Selenium проверена");
         return this;
     }
+
+    /**
+     * Метод для вывода всех версий библиотек в pom.xml
+     * @return измененную POMXmlPage
+     */
+
+
+    public POMXmlPage showAllVersion(){
+        LOG.info("Выводим версии");
+        Map<String, String> libAndVersion = new HashMap<>();
+        List<WebElement> ourVersion = driver.findElements(versions);
+        driver.findElements(artifacts).forEach(
+                artifact ->{
+                    Assert.assertTrue(artifact.isDisplayed());
+                    libAndVersion.put(artifact.getText()
+                                                    .replaceAll("<artifactId>", "")
+                                                    .replaceAll("</artifactId>", "")
+                                                    .replaceAll(" ", ""),
+                            ourVersion.get(driver.findElements(artifacts).indexOf(artifact))
+                                    .getText()
+                                    .replaceAll("<version>", "")
+                                    .replaceAll("</version>", "")
+                                    .replaceAll(" ", ""));
+                });
+        libAndVersion.forEach((key, value) ->{
+            LOG.info(key + ": " + value );
+        });
+        LOG.info("Вывод версий завершен");
+        return this;
+    }
+
 
 }
