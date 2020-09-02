@@ -1,11 +1,12 @@
-package Pages.code;
+package pages.workPanel.issues;
 
-import Pages.BasePages;
+
+import pages.workPanel.WorkPanel;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class IssuesPage extends BasePages {
+public class IssuesPage extends WorkPanel {
 
     public IssuesPage(WebDriver driver) {
         super(driver);
@@ -15,13 +16,11 @@ public class IssuesPage extends BasePages {
     private final By issueTitleField = By.name("issue[title]");
     private final By issueBodyField = By.name("issue[body]");
     private final By SubmitNewIssueButton = By.xpath("//button[@type='submit' and contains(text(),'Submit new issue')]");
-    private final By userIcon = By.xpath("//summary[@aria-label='View profile and more']");
-    private final By signOutButton = By.xpath("//button[contains(text(), 'Sign out')]");
-    private final By welcomeMessage = By.xpath("//h1[contains(text(), 'Built for developers')]");
     private final By newIssueTitle = By.xpath("//span[@class='js-issue-title']");
     private final By newIssueBody = By.xpath("//tr[@class='d-block']");
-    String issueTitle = "Test Title";
-    String issueBody = "Test Body";
+    private final By IssueTitleList = By.xpath("//a[@data-hovercard-type='issue']");
+    public String issueTitle = "Test Title";
+    public String issueBody = "Test Body";
 
 
     /**
@@ -29,7 +28,17 @@ public class IssuesPage extends BasePages {
      * @return new IssuesPage
      */
 
-    public IssuesPage createNewIssue() {
+    public IssuesCreationPages pressCreateNewIssues(){
+        Assert.assertTrue(this.driver.findElement(NewIssueButton).isEnabled());
+        driver.findElement(NewIssueButton).click();
+        return new IssuesCreationPages (this.driver);
+    }
+
+    /**
+     * Переделать
+     * @return
+     */
+    public IssuesPage createNewIssue2() {
         LOG.info("Создаем новый Issue");
         Assert.assertTrue(this.driver.findElement(NewIssueButton).isEnabled());
         driver.findElement(NewIssueButton).click();
@@ -40,7 +49,7 @@ public class IssuesPage extends BasePages {
         Assert.assertTrue(this.driver.findElement(SubmitNewIssueButton).isEnabled());
         driver.findElement(SubmitNewIssueButton).click();
         LOG.info("Новый Issue создан");
-        return new IssuesPage (driver);
+        return new IssuesPage(driver);
     }
 
     /**
@@ -54,7 +63,7 @@ public class IssuesPage extends BasePages {
         Assert.assertTrue(this.driver.findElement(newIssueBody).isEnabled());
         Assert.assertEquals(issueBody, driver.findElement(newIssueBody).getText());
         LOG.info("Название и описание созданного Issues соответствуют");
-        return new IssuesPage (driver);
+        return new IssuesPage(driver);
     }
 
 }

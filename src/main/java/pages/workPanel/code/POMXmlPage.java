@@ -1,6 +1,7 @@
-package Pages.code;
+package pages.workPanel.code;
 
-import Pages.BasePages;
+
+import pages.workPanel.WorkPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class POMXmlPage extends BasePages {
+public class POMXmlPage extends WorkPanel {
 
 
 

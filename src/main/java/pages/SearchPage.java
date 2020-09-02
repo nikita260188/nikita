@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Pages.code.CodePage;
+import pages.workPanel.code.CodePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 
-public class SearchPage extends BasePages{
+public class SearchPage extends Header{
 
     public SearchPage(WebDriver driver) {
 

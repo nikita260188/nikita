@@ -1,19 +1,19 @@
 package DZ.Tests;
 
-import Pages.LoginPage;
-import Pages.MainPage;
+import pages.LoginPage;
+import pages.MainPage;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GitTest extends BaseTest  {
+public class GitTest extends BaseTest {
 
     private LoginPage loginPage;
     private MainPage mainPages;
 
 
     @Before
-    public void init(){
-    this.loginPage = new LoginPage(this.driver);
+    public void init() {
+        this.loginPage = new LoginPage(this.driver);
 
     }
 
@@ -22,9 +22,9 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void negativeAuthTest(){
-            this.loginPage.login("TestUser","TestPassword")
-                    .validateError("Incorrect username or password.");
+    public void negativeAuthTest() {
+        this.loginPage.login("TestUser", "TestPassword")
+                .validateError("Incorrect username or password.");
 
     }
 
@@ -33,7 +33,7 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void positiveAuthTest(){
+    public void positiveAuthTest() {
         mainPages = this.loginPage.login()
                 .validateSuccess("Working with a team?");
     }
@@ -43,7 +43,7 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void checkOurCommits(){
+    public void checkOurCommits() {
         this.loginPage.login()
                 .openCommits();
     }
@@ -53,13 +53,14 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void DZ12(){
+    public void DZ12() {
         this.loginPage.login()
                 .openSearchPages()
                 .openCodePage()
                 .openPomFile()
                 .checkSeleniumVersion()
-                .signOut();
+                .signOut()
+                .checkHomePage();
     }
 
     /**
@@ -67,13 +68,14 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void checkPom(){
+    public void checkPom() {
         this.loginPage.login()
                 .openSearchPages()
                 .openCodePage()
                 .openPomFile()
                 .showAllVersion()
-                .signOut();
+                .signOut()
+                .checkHomePage();
     }
 
     /**
@@ -81,15 +83,24 @@ public class GitTest extends BaseTest  {
      */
 
     @Test
-    public void DZ14 (){
+    public void DZ14() {
         this.loginPage.login()
                 .openSearchPages()
                 .openCodePage()
                 .ShowAllTab()
                 .openIssuesPage()
-                .createNewIssue()
+                .createNewIssue2()
                 .checkNewIssue()
-                .signOut();
+                .signOut()
+                .checkHomePage();
+    }
+
+    @Test
+    public void qqq() {
+        this.loginPage.login()
+                .openSearchPages("BKuso/G44Automation")
+                .ShowAllTab()
+                .openIssuesPage();
+
     }
 }
-
