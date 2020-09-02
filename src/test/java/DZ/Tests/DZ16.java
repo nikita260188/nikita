@@ -21,9 +21,9 @@ public class DZ16 extends BaseTest{
     private MainPage page;
     private String issueTitle;
     private String issueComment;
-    private List<String>[] issueLabel;
+    private List<String> issueLabel;
 
-    public DZ16(String title, String comment, List<String>... label) {
+    public DZ16(String title, String comment, List<String> label) {
         this.issueTitle = title;
         this.issueComment = comment;
         this.issueLabel = label;
@@ -33,6 +33,7 @@ public class DZ16 extends BaseTest{
 
     @Parameterized.Parameters
     public static List<Object[]> params() {
+        List<String>iteratio
         return Arrays.asList(new Object[][]{
                 {"test_title1", "test_comment1", new ArrayList<String>(){
                     {
