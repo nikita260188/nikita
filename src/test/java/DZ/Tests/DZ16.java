@@ -33,7 +33,6 @@ public class DZ16 extends BaseTest{
 
     @Parameterized.Parameters
     public static List<Object[]> params() {
-        List<String>iteratio
         return Arrays.asList(new Object[][]{
                 {"test_title1", "test_comment1", new ArrayList<String>(){
                     {
