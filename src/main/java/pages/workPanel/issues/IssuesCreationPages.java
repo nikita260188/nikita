@@ -4,10 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.workPanel.WorkPanel;
+import java.util.List;
 
-import java.util.Arrays;
 
-import static java.lang.Thread.sleep;
 
 
 public class IssuesCreationPages extends WorkPanel {
@@ -25,24 +24,56 @@ public class IssuesCreationPages extends WorkPanel {
         return By.xpath(String.format( "//span[text()='%s']", name));
     }
 
-    public IssuesCreationPages createIssue (String Title, String Comment, String... Labels){
+    /**
+     * Метод для введения параметров (String+String+List<String>) в issue
+     * @param Title
+     * @param Comment
+     * @param Labels
+     * @return
+     */
+
+    public IssuesCreationPages createIssue (String Title, String Comment, List<String> Labels){
+        LOG.info("Создаем новый issue с параметрами  " + Title + " : "+ Comment + " : "+ Labels);
         Assert.assertTrue(this.driver.findElement(issueTitleField).isEnabled());
         driver.findElement(issueTitleField).sendKeys(Title);
         Assert.assertTrue(this.driver.findElement(issueCommentField).isEnabled());
         driver.findElement(issueCommentField).sendKeys(Comment);
         this.driver.findElement(additionalFieldButtons).click();
-        Arrays.stream(Labels).forEach(label ->{
+        Labels.forEach(label ->{
             Assert.assertTrue(this.driver.findElement(labelLocator(label)).isEnabled());
             this.driver.findElement(labelLocator(label)).click();
         });
         driver.findElement(additionalFieldButtons).click();
+        LOG.info("Параметры введены");
         return new IssuesCreationPages (this.driver);
     }
 
+    /**
+     * Метод для нажатия на кнопку Submit New Issue
+     * @return
+     */
+
     public IssuePage pressSubmitNewIssueButton(){
+        LOG.info("Нажимаем на кнопку Submit New Issue");
         Assert.assertTrue(this.driver.findElement(SubmitNewIssueButton).isEnabled());
         driver.findElements(SubmitNewIssueButton).get(0).click();
+        LOG.info("Новый issue создан");
         return new IssuePage (this.driver);
+    }
+
+    /**
+     * Метод для введения 2-х типа String параметров в issue
+     * @return
+     */
+
+    public IssuesCreationPages createNewIssue(String issueTitle,String issueBody) {
+        LOG.info("Создаем новый issue с параметрами  " + issueTitle + " : "+ issueBody);
+        Assert.assertTrue(this.driver.findElement(issueTitleField).isEnabled());
+        driver.findElement(issueTitleField).sendKeys(issueTitle);
+        Assert.assertTrue(this.driver.findElement(issueCommentField).isEnabled());
+        driver.findElement(issueCommentField).sendKeys(issueBody);
+        LOG.info("Параметры введены");
+        return new IssuesCreationPages(driver);
     }
 
 }

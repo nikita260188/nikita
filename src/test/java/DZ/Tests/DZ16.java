@@ -19,18 +19,23 @@ import java.util.List;
 public class DZ16 extends BaseTest{
 
     private MainPage page;
-    private String issueTitle;
-    private String issueComment;
-    private List<String> issueLabel;
+    private final String issueTitle;
+    private final String issueComment;
+    private final List<String> issueLabel;
 
+    /**
+     * Конструктор с переменными
+     * @param title, comment, label
+     */
     public DZ16(String title, String comment, List<String> label) {
         this.issueTitle = title;
         this.issueComment = comment;
         this.issueLabel = label;
     }
 
-
-
+    /**
+     * List с переменными
+     */
     @Parameterized.Parameters
     public static List<Object[]> params() {
         return Arrays.asList(new Object[][]{
@@ -77,6 +82,9 @@ public class DZ16 extends BaseTest{
         });
     }
 
+    /**
+     * Тест с выполнением ДЗ-16
+     */
 
     @Before
     public void init(){
@@ -90,14 +98,10 @@ public class DZ16 extends BaseTest{
                 .openIssuesPage()
                 .pressCreateNewIssues()
                 .createIssue (issueTitle,issueComment,issueLabel)
-                .pressSubmitNewIssueButton();
+                .pressSubmitNewIssueButton()
+                .checkNewIssue(issueTitle,issueComment);
     }
 
-//    private String concatenate (Object... params){
-//        StringBuilder builder = new StringBuilder();
-//        Arrays.stream(params).forEach(param ->builder.append(param).append(", "));
-//        return builder.toString();
-//    }
 
     @After
     public void exit(){

@@ -64,6 +64,11 @@ public abstract class Header extends BasePages{
 
     }
 
+    /**
+     * Метод для поиска репозитория введенного в метод
+     * @return new SearchPage
+     */
+
     public CodePage openSearchPages(String projectTitle) {
         LOG.info("Ищем репозиторий " + projectTitle);
         Assert.assertTrue(this.driver.findElement(InputSearch).isEnabled());

@@ -84,23 +84,18 @@ public class GitTest extends BaseTest {
 
     @Test
     public void DZ14() {
+        String issueTitle = "Title";
+        String issueComment = "Comment";
         this.loginPage.login()
                 .openSearchPages()
                 .openCodePage()
                 .ShowAllTab()
                 .openIssuesPage()
-                .createNewIssue2()
-                .checkNewIssue()
+                .pressCreateNewIssues()
+                .createNewIssue(issueTitle,issueComment)
+                .pressSubmitNewIssueButton()
+                .checkNewIssue(issueTitle,issueComment)
                 .signOut()
                 .checkHomePage();
-    }
-
-    @Test
-    public void qqq() {
-        this.loginPage.login()
-                .openSearchPages("BKuso/G44Automation")
-                .ShowAllTab()
-                .openIssuesPage();
-
     }
 }
