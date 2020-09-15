@@ -1,18 +1,19 @@
 package DZ.Tests;
 
 
-
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.LoginPage;
 import pages.MainPage;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+
+import static helpers.ExcelHelper.readProviderDataFromExcel;
+import static java.lang.System.getProperty;
 
 
 @RunWith(Parameterized.class)
@@ -27,59 +28,32 @@ public class DZ16 extends BaseTest{
      * Конструктор с переменными
      * @param title, comment, label
      */
-    public DZ16(String title, String comment, List<String> label) {
-        this.issueTitle = title;
-        this.issueComment = comment;
+    public DZ16(Object title, Object comment, List<String> label) {
+        this.issueTitle = title.toString();
+        this.issueComment = comment.toString();
         this.issueLabel = label;
     }
 
     /**
-     * List с переменными
+     * Достаем параметры с файла
      */
     @Parameterized.Parameters
-    public static List<Object[]> params() {
-        return Arrays.asList(new Object[][]{
-                {"test_title1", "test_comment1", new ArrayList<String>(){
-                    {
-                        add ("bug");
-                    }
-                }},
-                {"test_title2", "test_comment2", new ArrayList<String>(){
-                    {
-                        add ("documentation");
-                    }
-                }},
-                {"test_title3", "test_comment3", new ArrayList<String>(){
-                    {
-                        add ("question");
-                    }
-                }},
-                {"test_title4", "test_comment4", new ArrayList<String>(){
-                    {
-                        add ("bug");
-                        add ("documentation");
-                    }
-                }},
-                {"test_title5", "test_comment5", new ArrayList<String>(){
-                    {
-                        add ("bug");
-                        add ("question");
-                    }
-                }},
-                {"test_title6", "test_comment6", new ArrayList<String>(){
-                    {
-                        add ("documentation");
-                        add ("question");
-                    }
-                }},
-                {"test_title7", "test_comment7", new ArrayList<String>(){
-                    {
-                        add ("bug");
-                        add ("documentation");
-                        add ("question");
-                    }
-                }}
-        });
+    public static Collection<Object[]> params() {
+        return readProviderDataFromExcel(getProperty("user.dir")
+                + "/src/test/resources/data/input/ExcelData.xlsx","Sheet3");
+//        List<String> params = linesFromFile(getProperty("user.dir")
+//                + "/src/test/resources/data/input/NewIssue3Values.txt");
+//        List<Object[]> result = new ArrayList<>();
+//                   params.forEach(value->{
+//                       String[] values = value.split(":");
+//                       String[] label = values[2].split(",");
+//                       Object[] temp = new Object[]{
+//                               values[0], values[1], Arrays.asList(label)
+//                           };
+//                           result.add(temp);
+//
+//                });
+//        return result;
     }
 
     /**
@@ -102,6 +76,10 @@ public class DZ16 extends BaseTest{
                 .checkNewIssue(issueTitle,issueComment);
     }
 
+    @Test
+    public void dfc(){
+        System.out.println(issueLabel);
+    }
 
     @After
     public void exit(){

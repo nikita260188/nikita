@@ -5,6 +5,8 @@ import pages.MainPage;
 import org.junit.Before;
 import org.junit.Test;
 
+
+
 public class GitTest extends BaseTest {
 
     private LoginPage loginPage;
@@ -17,16 +19,6 @@ public class GitTest extends BaseTest {
 
     }
 
-    /**
-     * Выполнение негативного теста входа
-     */
-
-    @Test
-    public void negativeAuthTest() {
-        this.loginPage.login("TestUser", "TestPassword")
-                .validateError("Incorrect username or password.");
-
-    }
 
     /**
      * Выполнение позитивного теста входа
@@ -78,24 +70,4 @@ public class GitTest extends BaseTest {
                 .checkHomePage();
     }
 
-    /**
-     * Тест с выполнением ДЗ-14
-     */
-
-    @Test
-    public void DZ14() {
-        String issueTitle = "Title";
-        String issueComment = "Comment";
-        this.loginPage.login()
-                .openSearchPages()
-                .openCodePage()
-                .ShowAllTab()
-                .openIssuesPage()
-                .pressCreateNewIssues()
-                .createNewIssue(issueTitle,issueComment)
-                .pressSubmitNewIssueButton()
-                .checkNewIssue(issueTitle,issueComment)
-                .signOut()
-                .checkHomePage();
-    }
 }

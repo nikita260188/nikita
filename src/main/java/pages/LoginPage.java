@@ -46,6 +46,7 @@ public class LoginPage extends BasePages{
      * @return new LoginPage
      */
     public LoginPage login(String username, String password){
+        LOG.info(String.format("веден логин: %s, пароль: %s", username, password));
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(signInButton).click();
