@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class ExcelHelper {
@@ -54,7 +55,16 @@ public class ExcelHelper {
                     } else {
                         labels.add(String.valueOf(isCellString(cell)
                                 ? cell.getRichStringCellValue()
-                                : cell.getRichStringCellValue()));
+                                : (int) cell.getNumericCellValue()));
+                        Iterator it = labels.iterator();
+                        while(it.hasNext()) {
+                            String value= (String)it.next();
+                            if ("0".equals(value)) {
+                                it.remove();
+                            }
+                        }
+
+
                     }
                 }
                 temp[2] = labels;
