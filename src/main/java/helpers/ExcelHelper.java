@@ -19,11 +19,18 @@ import java.util.List;
 
 public class ExcelHelper {
 
-    private final static Logger log = LogManager.getLogger("Помошник для работы с EXcel");
+    private final static Logger log = LogManager.getLogger("Помошник для работы с Excel");
+
+    /**
+     * Хелпер для вычитки с 1 столбца Excel файла
+     * @param filePath, sheetName
+     * @return List<String>
+     */
 
     public static List<String> readColumnFromExcel(String filePath, String sheetName){
         List<String> result = new ArrayList<>();
         try {
+            log.info("Вычитываем Excel файл и создаем List<String>");
             XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(filePath));
             XSSFSheet sheet = workbook.getSheet(sheetName);
             for(int i = 0; i <= sheet.getLastRowNum(); i++){
@@ -32,12 +39,20 @@ public class ExcelHelper {
         } catch (IOException e) {
             log.error(e);
         }
+        log.info("Файл Excel вычитан и создан List<String>");
         return result;
     }
+
+    /**
+     * Хелпер для вычитки Excel файла
+     * @param filePath, sheetName
+     * @return List<Object[]>
+     */
 
     public static List<Object[]> readProviderDataFromExcel(String filePath, String sheetName){
         List<Object[]> result = new ArrayList<>();
         try {
+            log.info("Вычитываем Excel файл и создаем List<Object[]> с двумя строками и List<String>");
             XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(filePath));
             XSSFSheet sheet = workbook.getSheet(sheetName);
             for(int i = 0; i <= sheet.getLastRowNum(); i++){
@@ -73,12 +88,18 @@ public class ExcelHelper {
         } catch (IOException e) {
             log.error(e);
         }
+        log.info("Файл Excel вычитан и создан List<Object[]>");
         return result;
     }
 
     private static boolean isCellString(XSSFCell cell){
         return cell.getCellType()== CellType.STRING;
     }
+
+    /**
+     * Хелпер для записи Excel файла
+     * @param filePath, sheetName, text
+     */
 
     public static void writeToExcelFile(String filePath, String sheetName, String text){
         //prepare data

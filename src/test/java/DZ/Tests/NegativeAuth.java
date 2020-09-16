@@ -6,11 +6,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.LoginPage;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import static helpers.ExcelHelper.readColumnFromExcel;
+import static helpers.FileHelper.loadDataForProvider;
 import static java.lang.System.getProperty;
 
 @RunWith(Parameterized.class)
@@ -21,32 +20,48 @@ public class NegativeAuth extends BaseTest{
     private final String username;
     private final String password;
 
-    @Parameterized.Parameters
-//    public static Collection<Object[]> data(){
-//        Map<String, String> testData = loadDataForProvider(getProperty("user.dir") + "/src/test/resources/data/input/negativeAuthData.txt");
-//        Object[][] result = new Object[testData.keySet().size()][2];
-//        List<String> logins = new ArrayList<>(testData.keySet());
-//        for(int i = 0; i < testData.keySet().size(); i++){
-//            result[i][0] = logins.get(i);
-//            result[i][1] = testData.get(logins.get(i));
-//        }
-//        return Arrays.asList(result);
-//    }
+    /**
+     * Достаем параметры с file/excel
+     */
 
-    public static Collection<Object[]> data(){
-        List<String> testData = readColumnFromExcel(getProperty("user.dir")
-                + "/src/test/resources/data/input/ExcelData.xlsx","Sheet1");
-       List<Object[]> result = new ArrayList<>();
-        testData.forEach(value->{
-                       String[] values = value.split(":");
-                       Object[] temp = new Object[]{
-                               values[0], values[1]
-                           };
-                           result.add(temp);
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        List<Object[]> result = new ArrayList<>();
+        switch (System.getProperty("source", "file")){
+            case "excel":
+                List<String> testDataExcel = readColumnFromExcel(getProperty("user.dir")
+                        + "/src/test/resources/data/input/ExcelData.xlsx", "Sheet1");
+                List<Object[]> resultExcel= new ArrayList<>();
+                testDataExcel.forEach(value -> {
+                    String[] values = value.split(":");
+                    Object[] temp = new Object[]{
+                            values[0], values[1]
+                    };
+                    resultExcel.add(temp);
 
                 });
-        return result;
+                result = resultExcel;
+                break;
+
+                case "file":
+                    Map<String, String> testData = loadDataForProvider(getProperty("user.dir")
+                            + "/src/test/resources/data/input/negativeAuthData.txt");
+                    Object[][] resultFile = new Object[testData.keySet().size()][2];
+                    List<String> logins = new ArrayList<>(testData.keySet());
+                        for(int i = 0; i < testData.keySet().size(); i++){
+                            resultFile[i][0] = logins.get(i);
+                            resultFile[i][1] = testData.get(logins.get(i));
+                        }
+                    result = Arrays.asList(resultFile);
+                    break;
+        }
+            return result;
     }
+
+    /**
+     * Конструктор с переменными
+     * @param login, password
+     */
 
     public NegativeAuth(String login, String password){
         this.username = login;
