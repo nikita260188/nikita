@@ -18,8 +18,7 @@ public abstract class BaseNPApiTest {
     @Before
     public void setUp(){
         this.reqSpec = new RequestSpecBuilder()
-                .setBaseUri("http://testapi.novaposhta.ua/v2.0")
-                .addQueryParam("Content-Type","application/json")
+                .setBaseUri("https://api.novaposhta.ua/v2.0")
                 .build();
         this.resSpec = new ResponseSpecBuilder()
                 .expectStatusCode(200)

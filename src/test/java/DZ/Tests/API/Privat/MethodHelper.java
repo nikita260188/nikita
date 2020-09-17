@@ -32,6 +32,7 @@ public abstract class MethodHelper extends DZ.Tests.API.Privat.BaseApiTest {
     protected Response post(Map<String, Object> body, String partOfUrl){
         return given()
                 .spec(reqSpec)
+                .contentType(ContentType.JSON)
                 .body(body)
                 .when()
                 .log()

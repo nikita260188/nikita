@@ -32,11 +32,11 @@ public abstract class MethodNPHelper extends DZ.Tests.API.Privat.BaseNPApiTest {
     protected Response post(Map<String, Object> body, String partOfUrl){
         return given()
                 .spec(reqSpec)
-                .body(body)
+                .body(body).contentType("application/json")
                 .when()
                 .log()
                 .all(true)
-                .get(partOfUrl);
+                .post(partOfUrl);
     }
 
     protected Response post(BaseEntity body, String partOfUrl){
