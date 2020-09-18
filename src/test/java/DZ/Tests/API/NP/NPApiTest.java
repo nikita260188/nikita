@@ -1,6 +1,7 @@
 package DZ.Tests.API.NP;
 
 import DZ.Tests.API.Privat.MethodNPHelper;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.Map;
 
 public class NPApiTest extends MethodNPHelper {
 
+    @Ignore
     @Test
     public void getNP(){
         Map<String, Object> testData = new HashMap<>();
