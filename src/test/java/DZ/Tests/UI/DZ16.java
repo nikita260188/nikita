@@ -71,7 +71,7 @@ public class DZ16 extends BaseTest {
      * Тест с выполнением ДЗ-16
      */
 
-    @Test()
+    @Test
     public void checkSearch() {
         this.page
                 .openSearchPages("nikita260188/nikita")
