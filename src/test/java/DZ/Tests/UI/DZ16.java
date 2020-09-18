@@ -19,7 +19,7 @@ import static java.lang.System.getProperty;
 
 
 @RunWith(Parameterized.class)
-public class DZ16 extends DZ.Tests.BaseTest {
+public class DZ16 extends BaseTest {
 
     private MainPage page;
     private final String issueTitle;

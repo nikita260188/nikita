@@ -1,4 +1,4 @@
-package DZ.Tests;
+package DZ.Tests.UI;
 
 import pages.LoginPage;
 import pages.MainPage;

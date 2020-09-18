@@ -1,4 +1,4 @@
-package DZ.Tests;
+package DZ.Tests.UI;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +36,7 @@ public abstract class BaseTest {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver",
                     System.getProperty("user.dir") +
-                            "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
+                            "/src/main/resources/drivers/chrome/v85/chromedriver.exe");
                 this.driver = new ChromeDriver();
                 break;
             case "safari":

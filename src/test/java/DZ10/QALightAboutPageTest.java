@@ -19,7 +19,7 @@ public class QALightAboutPageTest {
     public void pageTest(){
         System.setProperty("webdriver.chrome.driver",
                 System.getProperty("user.dir") +
-                        "/src/main/resources/drivers/chrome/v84/chromedriver.exe");
+                        "/src/main/resources/drivers/chrome/v85/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

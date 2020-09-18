@@ -1,4 +1,4 @@
-package DZ.Tests;
+package DZ.Tests.UI;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static helpers.FileHelper.loadDataForProvider;
 import static java.lang.System.getProperty;
 
 @RunWith(Parameterized.class)
-public class NegativeAuth extends BaseTest{
+public class NegativeAuth extends BaseTest {
 
     private LoginPage loginPage;
 
