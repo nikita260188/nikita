@@ -22,7 +22,7 @@ public class DZ14  extends BaseTest {
     private LoginPage loginPage;
 
     /**
-     * Р”РѕСЃС‚Р°РµРј РїР°СЂР°РјРµС‚СЂС‹ СЃ file/excel
+     * Достаем параметры с file/excel
      */
 
     @Parameterized.Parameters
@@ -59,7 +59,7 @@ public class DZ14  extends BaseTest {
 
 
     /**
-     * РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїРµСЂРµРјРµРЅРЅС‹РјРё
+     * Конструктор с переменными
      * @param title, comment
      */
 
@@ -75,7 +75,7 @@ public class DZ14  extends BaseTest {
     }
 
     /**
-     * РўРµСЃС‚ СЃ РІС‹РїРѕР»РЅРµРЅРёРµРј Р”Р—-14
+     * Тест с выполнением ДЗ-14
      */
 
     @Test
