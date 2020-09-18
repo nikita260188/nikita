@@ -85,7 +85,7 @@
                         <allure.results>target/allure-results</allure.results>
                         <username>nikita260188</username>
                         <password>Serdxz684</password>
-                        <file.encoding>UTF-8</file.encoding> ?>file.encoding>
+                        <file.encoding>UTF-8</file.encoding>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
