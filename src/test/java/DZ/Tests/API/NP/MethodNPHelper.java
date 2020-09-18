@@ -1,12 +1,12 @@
 package DZ.Tests.API.Privat;
 
 import entities.BaseEntity;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.JSON;
 
 public abstract class MethodNPHelper extends DZ.Tests.API.Privat.BaseNPApiTest {
 
@@ -32,7 +32,9 @@ public abstract class MethodNPHelper extends DZ.Tests.API.Privat.BaseNPApiTest {
     protected Response post(Map<String, Object> body, String partOfUrl){
         return given()
                 .spec(reqSpec)
-                .body(body).contentType("application/json")
+                .body(body)
+                .contentType("application/json")
+                .accept(JSON)
                 .when()
                 .log()
                 .all(true)
@@ -42,7 +44,7 @@ public abstract class MethodNPHelper extends DZ.Tests.API.Privat.BaseNPApiTest {
     protected Response post(BaseEntity body, String partOfUrl){
         return given()
                 .spec(reqSpec)
-                .contentType(ContentType.JSON)
+                .contentType(JSON)
                 .body(body)
                 .when()
                 .log()

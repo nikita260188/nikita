@@ -1,4 +1,4 @@
-package DZ.Tests;
+package DZ.Tests.UI;
 
 
 import org.junit.After;
@@ -19,7 +19,7 @@ import static java.lang.System.getProperty;
 
 
 @RunWith(Parameterized.class)
-public class DZ16 extends BaseTest{
+public class DZ16 extends DZ.Tests.BaseTest {
 
     private MainPage page;
     private final String issueTitle;

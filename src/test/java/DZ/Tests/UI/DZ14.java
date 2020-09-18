@@ -1,4 +1,4 @@
-package DZ.Tests;
+package DZ.Tests.UI;
 
 
 import org.junit.Before;
@@ -14,7 +14,7 @@ import static helpers.FileHelper.loadDataForProvider;
 import static java.lang.System.getProperty;
 
 @RunWith(Parameterized.class)
-public class DZ14  extends BaseTest{
+public class DZ14  extends DZ.Tests.BaseTest {
 
 
     private final String issueTitle;

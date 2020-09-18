@@ -13,10 +13,10 @@ public class NPApiTest extends MethodNPHelper {
         Map<String, Object> testData = new HashMap<>();
         Map<String, Object> Data = new HashMap<>();
         testData.put("modelName", "Common");
-        testData.put("calledMethod", "getTypesOfCounterparties");
+        testData.put("calledMethod", "getCargoTypes");
         testData.put("apiKey", "a011a4e3b502bdb46765dfe0e73a2e7c");
         testData.put("methodProperties",Data);
-        post(testData, "/common/getTypesOfCounterparties/json/")
+        post(testData, "/v2.0/common/getCargoTypes/json")
                 .then()
                 .log()
                 .all(true)
