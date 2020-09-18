@@ -12,7 +12,7 @@ import static java.lang.Thread.sleep;
 
 public abstract class Header extends BasePages{
 
-    private final By InputSearch = By.xpath("//input [@aria-label='Search or jump to…']");
+    private final By InputSearch = By.xpath("//form[@data-unscoped-search-url='/search']/label/input[1]");
     private final By userIcon = By.xpath("//summary[@aria-label='View profile and more']");
     private final By signOutButton = By.xpath("//button[contains(text(), 'Sign out')]");
     private final By myIssuesButton = By.xpath("//a [@aria-label='Issues you created']");
