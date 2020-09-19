@@ -82,10 +82,6 @@ public class DZ16Test extends BaseTest {
                 .checkNewIssue(issueTitle,issueComment);
     }
 
-    @Test
-    public void dfc(){
-        System.out.println(issueLabel);
-    }
 
     @After
     public void exit(){
