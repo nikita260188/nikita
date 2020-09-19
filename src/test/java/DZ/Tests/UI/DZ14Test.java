@@ -14,7 +14,7 @@ import static helpers.FileHelper.loadDataForProvider;
 import static java.lang.System.getProperty;
 
 @RunWith(Parameterized.class)
-public class DZ14  extends BaseTest {
+public class DZ14Test extends BaseTest {
 
 
     private final String issueTitle;
@@ -63,7 +63,7 @@ public class DZ14  extends BaseTest {
      * @param title, comment
      */
 
-    public DZ14(String title, String comment){
+    public DZ14Test(String title, String comment){
         this.issueTitle = title;
         this.issueComment = comment;
     }

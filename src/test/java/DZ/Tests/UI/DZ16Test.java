@@ -19,7 +19,7 @@ import static java.lang.System.getProperty;
 
 
 @RunWith(Parameterized.class)
-public class DZ16 extends BaseTest {
+public class DZ16Test extends BaseTest {
 
     private MainPage page;
     private final String issueTitle;
@@ -31,7 +31,7 @@ public class DZ16 extends BaseTest {
      * @param title, comment, label
      */
 
-    public DZ16(Object title, Object comment, List<String> label) {
+    public DZ16Test(Object title, Object comment, List<String> label) {
         this.issueTitle = title.toString();
         this.issueComment = comment.toString();
         this.issueLabel = label;
