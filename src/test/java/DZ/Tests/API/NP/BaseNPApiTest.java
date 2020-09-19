@@ -6,6 +6,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 
 public abstract class BaseNPApiTest {
@@ -18,10 +19,11 @@ public abstract class BaseNPApiTest {
     @Before
     public void setUp(){
         this.reqSpec = new RequestSpecBuilder()
-                .setBaseUri("http://testapi.novaposhta.ua")
+                .setBaseUri("http://testapi.novaposhta.ua/v2.0/common")
                 .build();
         this.resSpec = new ResponseSpecBuilder()
                 .expectStatusCode(200)
+                .expectBody("success", CoreMatchers.equalTo(true))
                 .build();
     }
 

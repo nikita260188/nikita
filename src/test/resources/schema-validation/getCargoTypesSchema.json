@@ -1,0 +1,90 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "data",
+    "errors",
+    "warnings",
+    "info",
+    "messageCodes",
+    "errorCodes",
+    "warningCodes",
+    "infoCodes"
+  ],
+  "properties": {
+    "success": {
+      "title": "Success",
+      "type": "boolean",
+      "default": true,
+      "enum": [true]
+    },
+    "data": {
+      "title": "Data",
+      "type": "array",
+      "default": [],
+      "items":{
+        "title": "Items",
+        "type": "object",
+        "required": [
+          "Description",
+          "Ref"
+        ],
+        "properties": {
+          "Description": {
+            "title": "Description",
+            "type": "string",
+            "default": "",
+            "enum": ["Вантаж"
+                    ,"Документи"
+                    ,"Шини-диски"
+                    ,"Палети"
+                    ,"Посилка"]
+          },
+          "Ref": {
+            "title": "Ref",
+            "type": "string",
+            "default": "",
+            "enum": ["Cargo","Documents","TiresWheels","Pallet","Parcel"]
+          }
+        }
+      }
+
+    },
+    "errors": {
+      "title": "Errors",
+      "type": "array",
+      "default": []
+    },
+    "warnings": {
+      "title": "Warnings",
+      "type": "array",
+      "default": []
+    },
+    "info": {
+      "title": "Info",
+      "type": "array",
+      "default": []
+    },
+    "messageCodes": {
+      "title": "Messagecodes",
+      "type": "array",
+      "default": []
+    },
+    "errorCodes": {
+      "title": "Errorcodes",
+      "type": "array",
+      "default": []
+    },
+    "warningCodes": {
+      "title": "Warningcodes",
+      "type": "array",
+      "default": []
+    },
+    "infoCodes": {
+      "title": "Infocodes",
+      "type": "array",
+      "default": []
+    }
+  }
+}

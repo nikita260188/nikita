@@ -1,0 +1,67 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "data",
+    "errors",
+    "warnings",
+    "info"
+  ],
+  "properties": {
+    "success": {
+      "title": "Success",
+      "type": "boolean",
+      "default": true
+    },
+    "data": {
+      "title": "Data",
+      "type": "array",
+      "default": [],
+      "items":{
+        "title": "Items",
+        "type": "object",
+        "required": [
+          "Description",
+          "Ref"
+        ],
+        "properties": {
+          "Description": {
+            "title": "Description",
+            "type": "string",
+            "default": "",
+            "enum": ["Двері-Двері"
+                    ,"Двері-Склад"
+                    ,"Склад-Склад"
+                    ,"Склад-Двері"]
+          },
+          "Ref": {
+            "title": "Ref",
+            "type": "string",
+            "default": "",
+            "enum": ["DoorsDoors"
+                    ,"DoorsWarehouse"
+                    ,"WarehouseWarehouse"
+                    ,"WarehouseDoors"]
+          }
+        }
+      }
+
+    },
+    "errors": {
+      "title": "Errors",
+      "type": "array",
+      "default": []
+    },
+    "warnings": {
+      "title": "Warnings",
+      "type": "array",
+      "default": []
+    },
+    "info": {
+      "title": "Info",
+      "type": "array",
+      "default": []
+    }
+  }
+}
