@@ -1,4 +1,4 @@
-package DZ.Tests.API.Privat;
+package DZ.Tests.API.NP;
 
 import entities.BaseEntity;
 import io.restassured.response.Response;
@@ -8,7 +8,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 
-public abstract class MethodNPHelper extends DZ.Tests.API.Privat.BaseNPApiTest {
+public abstract class MethodNPHelper extends DZ.Tests.API.NP.BaseNPApiTest {
 
     protected Response get(Map<String, Object> params, String partOfUrl){
         return given()

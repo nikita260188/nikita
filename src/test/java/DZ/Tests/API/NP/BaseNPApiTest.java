@@ -1,4 +1,4 @@
-package DZ.Tests.API.Privat;
+package DZ.Tests.API.NP;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

@@ -1,6 +1,5 @@
 package DZ.Tests.API.NP;
 
-import DZ.Tests.API.Privat.MethodNPHelper;
 import org.junit.Test;
 
 import java.io.File;
@@ -46,7 +45,7 @@ public class NPApiTest extends MethodNPHelper {
                 .spec(resSpec)
                 .body(matchesJsonSchema(
                         new File(getProperty("user.dir")
-                                + "/src/test/resources/schema-validation/getServiceTypes")));
+                                + "/src/test/resources/schema-validation/getServiceTypesSchema")));
     }
 
 }
