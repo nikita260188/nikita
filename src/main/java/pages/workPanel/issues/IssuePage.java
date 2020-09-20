@@ -1,5 +1,6 @@
 package pages.workPanel.issues;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ public class IssuePage extends WorkPanel {
      * Метод для проверки названия и описания
      * @return new IssuesPage
      */
+    @Step("Проверяем названия и описания")
     public IssuesPage checkNewIssue(String Title, String Comment) {
         LOG.info("Проверяем название и описание созданного Issues");
         Assert.assertTrue(this.driver.findElement(newIssueTitle).isEnabled());

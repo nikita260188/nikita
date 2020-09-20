@@ -1,6 +1,7 @@
 package pages.workPanel.issues;
 
 
+import io.qameta.allure.Step;
 import pages.workPanel.WorkPanel;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ public class IssuesPage extends WorkPanel {
      * Метод для нажатия на кнопку Create New Issues
      * @return new IssuesPage
      */
-
+    @Step("Нажимаем на кнопку Create New Issues")
     public IssuesCreationPages pressCreateNewIssues(){
         LOG.info("Нажимаем на кнопку Create New Issues");
         Assert.assertTrue(this.driver.findElement(NewIssueButton).isEnabled());

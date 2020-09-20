@@ -16,6 +16,7 @@ public abstract class BaseNPApiTest {
     protected RequestSpecification reqSpec;
     protected ResponseSpecification resSpec;
 
+
     @Before
     public void setUp(){
         this.reqSpec = new RequestSpecBuilder()

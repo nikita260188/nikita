@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ public class HomePage extends BasePages{
     }
 
     private final By welcomeMessage = By.xpath("//h1[contains(text(), 'Built for developers')]");
-
+    @Step("Проверяем выход из GitHub")
     public void checkHomePage(){
         LOG.info("Проверка выхода из GitHub");
         Assert.assertTrue(this.driver.findElement(welcomeMessage).isDisplayed());

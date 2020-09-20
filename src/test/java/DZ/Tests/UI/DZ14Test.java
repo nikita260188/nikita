@@ -1,6 +1,7 @@
 package DZ.Tests.UI;
 
 
+import io.qameta.allure.Step;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -69,6 +70,7 @@ public class DZ14Test extends BaseTest {
     }
 
     @Before
+    @Step("Выходим из GitHub")
     public void init() {
         this.loginPage = new LoginPage(this.driver);
 

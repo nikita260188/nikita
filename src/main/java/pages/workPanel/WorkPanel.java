@@ -1,5 +1,6 @@
 package pages.workPanel;
 
+import io.qameta.allure.Step;
 import pages.Header;
 import pages.workPanel.actions.ActionsPage;
 import pages.workPanel.code.CodePage;
@@ -47,7 +48,7 @@ public class WorkPanel extends Header {
      * Метод для входа на вкладку Issues
      * @return new IssuesPage
      */
-
+    @Step("Входим на вкладку Issues")
     public IssuesPage openIssuesPage (){
         LOG.info("Заходим на вкладку Issues");
         Assert.assertTrue(this.driver.findElement(issuesButton).isDisplayed());
@@ -139,7 +140,7 @@ public class WorkPanel extends Header {
      * Метод для вывода вкладок на странице репозитория
      * @return измененную CodePage
      */
-
+    @Step("Выводим вкладки на странице репозитория")
     public WorkPanel ShowAllTab (){
         LOG.info("Выводим вкладки");
         driver.findElements(Tabs).forEach(

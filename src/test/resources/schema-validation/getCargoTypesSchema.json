@@ -34,12 +34,7 @@
           "Description": {
             "title": "Description",
             "type": "string",
-            "default": "",
-            "enum": ["Вантаж"
-                    ,"Документи"
-                    ,"Шини-диски"
-                    ,"Палети"
-                    ,"Посилка"]
+            "default": ""
           },
           "Ref": {
             "title": "Ref",

@@ -1,5 +1,6 @@
 package pages.workPanel.issues;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +32,7 @@ public class IssuesCreationPages extends WorkPanel {
      * @param Labels
      * @return
      */
-
+    @Step("Вводим параметры в issue")
     public IssuesCreationPages createIssue (String Title, String Comment, List<String> Labels){
         LOG.info("Создаем новый issue с параметрами  " + Title + " : "+ Comment + " : "+ Labels);
         Assert.assertTrue(this.driver.findElement(issueTitleField).isEnabled());
@@ -52,7 +53,7 @@ public class IssuesCreationPages extends WorkPanel {
      * Метод для нажатия на кнопку Submit New Issue
      * @return
      */
-
+    @Step("Нажимаем на кнопку Submit New Issue")
     public IssuePage pressSubmitNewIssueButton(){
         LOG.info("Нажимаем на кнопку Submit New Issue");
         Assert.assertTrue(this.driver.findElement(SubmitNewIssueButton).isEnabled());
@@ -65,7 +66,7 @@ public class IssuesCreationPages extends WorkPanel {
      * Метод для введения 2-х типа String параметров в issue
      * @return
      */
-
+    @Step("Вводим параметры в issue")
     public IssuesCreationPages createNewIssue(String issueTitle,String issueBody) {
         LOG.info("Создаем новый issue с параметрами  " + issueTitle + " : "+ issueBody);
         Assert.assertTrue(this.driver.findElement(issueTitleField).isEnabled());

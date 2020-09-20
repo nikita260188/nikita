@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import pages.workPanel.code.CodePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -22,6 +23,7 @@ public class SearchPage extends Header{
      * Метод для входа в репозиторий BKuso/G44Automation
      * @return new CodePage
      */
+    @Step("Входим в репозиторий BKuso/G44Automation")
     public CodePage openCodePage(){
         LOG.info("Выбираем репозиторий G44Automation");
         List<WebElement> link = driver.findElements (LinkG44Automation);

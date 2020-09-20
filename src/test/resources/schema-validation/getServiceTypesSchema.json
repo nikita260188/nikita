@@ -28,12 +28,7 @@
         "properties": {
           "Description": {
             "title": "Description",
-            "type": "string",
-            "default": "",
-            "enum": ["Двері-Двері"
-                    ,"Двері-Склад"
-                    ,"Склад-Склад"
-                    ,"Склад-Двері"]
+            "type": "string"
           },
           "Ref": {
             "title": "Ref",

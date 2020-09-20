@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
@@ -18,6 +19,8 @@ public abstract class BaseTest {
     protected final Logger LOG = LogManager.getLogger("Test");
 
     protected WebDriver driver;
+
+
 
     @Before
     public void setUp(){

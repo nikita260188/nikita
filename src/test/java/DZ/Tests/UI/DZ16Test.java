@@ -1,6 +1,7 @@
 package DZ.Tests.UI;
 
 
+import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,7 +71,9 @@ public class DZ16Test extends BaseTest {
     /**
      * Тест с выполнением ДЗ-16
      */
-
+    @Owner("Nikita")
+    @Severity(SeverityLevel.MINOR)
+    @Description("Тест для создания Issues с добавлением Label")
     @Test
     public void checkSearch() {
         this.page
@@ -83,7 +86,9 @@ public class DZ16Test extends BaseTest {
     }
 
 
+
     @After
+    @Step("Выходим из GitHub")
     public void exit(){
         this.page.signOut()
                 .checkHomePage();

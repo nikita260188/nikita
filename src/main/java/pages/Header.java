@@ -1,10 +1,11 @@
 package pages;
 
-import pages.workPanel.code.CodePage;
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.workPanel.code.CodePage;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public abstract class Header extends BasePages{
     /**
      * Метод для выхода из github
      */
-
+    @Step("Выходим из GitHub")
     public HomePage signOut(){
         LOG.info("Выходим из Git");
         this.driver.navigate().refresh();
@@ -54,7 +55,7 @@ public abstract class Header extends BasePages{
      * Метод для поиска репозитория BKuso/G44Automation
      * @return new SearchPage
      */
-
+    @Step("Ищем репозиторий: BKuso/G44Automation")
     public SearchPage openSearchPages() {
         LOG.info("Вводим в поисковое пооле название репозитория");
         Assert.assertTrue(this.driver.findElement(InputSearch).isEnabled());
@@ -68,7 +69,7 @@ public abstract class Header extends BasePages{
      * Метод для поиска репозитория введенного в метод
      * @return new SearchPage
      */
-
+    @Step("Ищем репозиторий с названием: \" {projectTitle}\"")
     public CodePage openSearchPages(String projectTitle) {
         LOG.info("Ищем репозиторий " + projectTitle);
         Assert.assertTrue(this.driver.findElement(InputSearch).isEnabled());

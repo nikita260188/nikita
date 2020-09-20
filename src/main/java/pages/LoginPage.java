@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -25,10 +26,10 @@ public class LoginPage extends BasePages{
     }
 
     /**
-     * Метод для проверки для входа в github с системными переменными
+     * Метод для для входа в github с системными переменными
      * @return new MainPage
      */
-
+    @Step("Входим в GitHub")
     public MainPage login(){
         validateTrue(driver.findElement(usernameField));
         validateTrue(driver.findElement(passwordField));

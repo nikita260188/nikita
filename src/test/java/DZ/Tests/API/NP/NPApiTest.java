@@ -1,5 +1,9 @@
 package DZ.Tests.API.NP;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.Test;
 
 import java.io.File;
@@ -11,7 +15,9 @@ import static java.lang.System.getProperty;
 
 public class NPApiTest extends MethodNPHelper {
 
-
+    @Owner("Nikita")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Тест API Новой Почты - Виды груза")
     @Test
     public void getCargoTypesNP(){
         Map<String, Object> testData = new HashMap<>();
@@ -27,9 +33,12 @@ public class NPApiTest extends MethodNPHelper {
                 .spec(resSpec)
                 .body(matchesJsonSchema(
                         new File(getProperty("user.dir")
-                                + "/src/test/resources/schema-validation/getCargoTypesSchema")));
+                                + "/src/test/resources/schema-validation/getCargoTypesSchema.json")));
     }
 
+    @Owner("Nikita")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Тест API Новой Почты - Технологии доставки")
     @Test
     public void getServiceTypesNP(){
         Map<String, Object> testData = new HashMap<>();
@@ -45,7 +54,7 @@ public class NPApiTest extends MethodNPHelper {
                 .spec(resSpec)
                 .body(matchesJsonSchema(
                         new File(getProperty("user.dir")
-                                + "/src/test/resources/schema-validation/getServiceTypesSchema")));
+                                + "/src/test/resources/schema-validation/getServiceTypesSchema.json")));
     }
 
 }

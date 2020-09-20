@@ -8,7 +8,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItem;
 
 public abstract class BaseApiTest {
 
@@ -16,6 +17,7 @@ public abstract class BaseApiTest {
 
     protected RequestSpecification reqSpec;
     protected ResponseSpecification resSpec;
+
 
     @Before
     public void setUp(){
