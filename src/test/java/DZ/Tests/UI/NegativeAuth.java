@@ -1,6 +1,7 @@
 package DZ.Tests.UI;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -71,7 +72,7 @@ public class NegativeAuth extends BaseTest {
     /**
      * Выполнение негативного теста входа
      */
-
+    @Ignore
     @Test
     public void negativeAuthTest(){
         this.loginPage.login(this.username, this.password)

@@ -4,6 +4,7 @@ package DZ.Tests.UI;
 import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -71,6 +72,7 @@ public class DZ16Test extends BaseTest {
     /**
      * Тест с выполнением ДЗ-16
      */
+    @Ignore
     @Owner("Nikita")
     @Severity(SeverityLevel.MINOR)
     @Description("Тест для создания Issues с добавлением Label")

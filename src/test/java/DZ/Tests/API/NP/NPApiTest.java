@@ -4,6 +4,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -14,7 +15,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static java.lang.System.getProperty;
 
 public class NPApiTest extends MethodNPHelper {
-
+    @Ignore
     @Owner("Nikita")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Тест API Новой Почты - Виды груза")
@@ -35,7 +36,7 @@ public class NPApiTest extends MethodNPHelper {
                         new File(getProperty("user.dir")
                                 + "/src/test/resources/schema-validation/getCargoTypesSchema.json")));
     }
-
+    @Ignore
     @Owner("Nikita")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Тест API Новой Почты - Технологии доставки")

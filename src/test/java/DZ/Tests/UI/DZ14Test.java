@@ -3,6 +3,7 @@ package DZ.Tests.UI;
 
 import io.qameta.allure.Step;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -79,7 +80,7 @@ public class DZ14Test extends BaseTest {
     /**
      * Тест с выполнением ДЗ-14
      */
-
+    @Ignore
     @Test
     public void DZ14() {
         this.loginPage.login()
