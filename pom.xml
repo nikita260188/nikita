@@ -9,7 +9,7 @@
     <version>0.0.1</version>
 
     <properties>
-        <aspectj.version>1.9.6</aspectj.version>
+        <aspectj.version>1.8.10</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -97,7 +97,6 @@
                     <systemPropertyVariables>
                         <allure.results>target/allure-results</allure.results>
                         <username>nikita260188</username>
-                        <password>Serdxz684</password>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
