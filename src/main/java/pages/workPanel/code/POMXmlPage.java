@@ -39,7 +39,8 @@ public class POMXmlPage extends WorkPanel {
         Assert.assertTrue(this.driver.findElement(seleniumID).isDisplayed());
         Logger LOG = LogManager.getLogger("Selenium Version");
         Assert.assertTrue(this.driver.findElement(seleniumVersion).isDisplayed());
-        try {Assert.assertEquals("            <version>3.141.59</version>", driver.findElement(seleniumVersion).getText());
+        try {Assert.assertEquals("            <version>3.141.59</version>",
+                driver.findElement(seleniumVersion).getText());
             LOG.info ("Версия Selenium 3.141.59");
         } catch (ComparisonFailure ignore) {LOG.error("Версия Selenium не 3.141.59 \n Данная версия - "
                 + driver.findElement(seleniumVersion).getText()
